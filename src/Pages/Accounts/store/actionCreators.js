@@ -6,3 +6,8 @@ export const showChequing = ()=>{
         type:constants.SHOW_CHEQUING
     }
 }
+export const closeChequing = ()=>{
+    return {
+        type:constants.CLOSE_CHEQUING
+    }
+}

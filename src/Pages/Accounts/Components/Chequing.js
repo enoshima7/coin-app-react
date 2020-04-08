@@ -1,18 +1,15 @@
 import React, { PureComponent } from 'react';
-import {
-  Wrapper,
-  Title,
-  Money,
-  Date,
-  List,
-  ListItem,
-  detailDate
-} from './style';
+import { Wrapper, Title, Money, Date, List, ListItem } from './style';
+import {actionCreators} from '../store'
+import {connect} from 'react-redux'
 class Chequing extends PureComponent {
   render() {
+    const {closeChequing} = this.props
     return (
       <Wrapper className={this.props.show}>
-        <Title>Chequing</Title>
+        <Title>
+          <i className="iconfont" onClick={closeChequing}>&#xe69a;</i>Chequing
+        </Title>
         <Money>$50.42</Money>
         <Date>
           MAY<i className="iconfont">&#xe69a;</i>
@@ -47,4 +44,15 @@ class Chequing extends PureComponent {
     );
   }
 }
-export default Chequing;
+const mapStateToProps = state => {
+  return {
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    closeChequing() {
+      dispatch(actionCreators.closeChequing());
+    }
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Chequing);

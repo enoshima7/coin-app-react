@@ -10,6 +10,7 @@ import LoginDetail from './Pages/LoginDetail';
 import Header from './Common/Header';
 import Home from './Pages/Home';
 import Accounts from './Pages/Accounts';
+import Budget from './Pages/Budget';
 function App() {
   return (
     <div className="App">
@@ -30,6 +31,9 @@ function App() {
                 </Route>
                 <Route path="/main/accounts" exact>
                   <Accounts></Accounts>
+                </Route>
+                <Route path="/main/budget" exact>
+                  <Budget></Budget>
                 </Route>
               </Switch>
             </Route>
