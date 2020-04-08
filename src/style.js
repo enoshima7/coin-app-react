@@ -47,6 +47,9 @@ html,body,#root,.App{
 	width:100%;
 	height:100%;
 }
+.App{
+	background-color: #fef9f0;
+}
 a{
 	text-decoration:none;
 	color:inherit;

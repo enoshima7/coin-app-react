@@ -3,9 +3,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import GlobalStyle from './style';
+import Iconfont from './statics/iconfont/iconfont';
 import GlobalFonts from './statics/font/fonts';
 import Login from './Pages/Login';
 import LoginDetail from './Pages/LoginDetail';
+import Header from './Common/Header';
+import Home from './Pages/Home';
+import Accounts from './Pages/Accounts';
 function App() {
   return (
     <div className="App">
@@ -18,11 +22,23 @@ function App() {
             <Route path="/login" exact>
               <LoginDetail />
             </Route>
+            <Route path="/main">
+              <Header></Header>
+              <Switch>
+                <Route path="/main"  exact>
+                  <Home></Home>
+                </Route>
+                <Route path="/main/accounts" exact>
+                  <Accounts></Accounts>
+                </Route>
+              </Switch>
+            </Route>
           </div>
           <GlobalFonts />
         </Router>
       </Provider>
       <GlobalStyle />
+      <Iconfont />
     </div>
   );
 }
